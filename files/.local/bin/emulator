@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Android emulator wrapper: the emulator only supports X11 (XWayland). With Hyprland's
+# xwayland.force_zero_scaling it renders at native resolution, so scale its Qt UI to match the 1.5x display.
+export QT_SCALE_FACTOR="${QT_SCALE_FACTOR:-1.5}"
+exec "$HOME/Android/Sdk/emulator/emulator" "$@"

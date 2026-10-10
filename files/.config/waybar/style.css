@@ -1,0 +1,102 @@
+/* Tokyo Night — floating pills */
+@define-color bg      rgba(26, 27, 38, 0.72);
+@define-color bg_hl   #292e42;
+@define-color fg      #c0caf5;
+@define-color comment #565f89;
+@define-color blue    #7aa2f7;
+@define-color cyan    #7dcfff;
+@define-color magenta #bb9af7;
+@define-color green   #9ece6a;
+@define-color yellow  #e0af68;
+@define-color orange  #ff9e64;
+@define-color red     #f7768e;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg;
+}
+
+tooltip {
+    background: rgba(22, 22, 30, 0.95);
+    border: 1px solid @bg_hl;
+    border-radius: 10px;
+}
+tooltip label { color: @fg; }
+
+/* Every module is its own pill */
+#custom-launcher,
+#custom-notification,
+#workspaces,
+#window,
+#clock,
+#tray,
+#cpu,
+#memory,
+#backlight,
+#custom-layout,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#custom-power {
+    background: @bg;
+    border: 1px solid rgba(122, 162, 247, 0.18);
+    border-radius: 17px;
+    padding: 0 14px;
+}
+
+window#waybar.empty #window { background: transparent; border: none; }
+
+#custom-launcher { color: @blue; font-size: 17px; padding: 0 16px 0 13px; }
+
+#workspaces { padding: 0 6px; }
+#workspaces button {
+    color: @comment;
+    background: transparent;
+    padding: 0 7px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+#workspaces button.active {
+    color: @blue;
+    background: rgba(122, 162, 247, 0.14);
+    padding: 0 12px;
+}
+#workspaces button.urgent { color: @red; }
+#workspaces button:hover { color: @magenta; background: rgba(187, 154, 247, 0.12); box-shadow: none; }
+
+#window  { color: @comment; font-weight: 500; }
+#clock   { color: @magenta; }
+#cpu     { color: @cyan; }
+#memory  { color: @blue; }
+#backlight { color: @yellow; }
+#pulseaudio { color: @green; }
+#pulseaudio.muted { color: @comment; }
+#network { color: @cyan; }
+#network.disconnected { color: @red; }
+#battery { color: @green; }
+#battery.charging, #battery.plugged { color: @cyan; }
+#battery.warning:not(.charging) { color: @orange; }
+#battery.critical:not(.charging) { color: @red; }
+#custom-power { color: @red; padding: 0 15px 0 13px; }
+
+#custom-notification { color: @magenta; padding: 0 15px 0 13px; }
+#custom-notification.notification,
+#custom-notification.inhibited-notification { color: @orange; }
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification { color: @comment; }
+
+#bluetooth { color: @blue; }
+#bluetooth.connected { color: @cyan; }
+#bluetooth.off, #bluetooth.disabled { color: @comment; }
+
+#custom-layout { color: @magenta; }
+#custom-layout.ar { color: @orange; }

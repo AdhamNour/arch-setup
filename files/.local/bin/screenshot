@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# screenshot [full|area|window]
+# Saves to ~/Pictures/Screenshots, copies to clipboard, and notifies with a preview.
+set -euo pipefail
+
+mode="${1:-full}"
+dir="$HOME/Pictures/Screenshots"
+mkdir -p "$dir"
+file="$dir/$(date +%Y-%m-%d_%H-%M-%S).png"
+
+case "$mode" in
+    full)
+        grim "$file"
+        ;;
+    area)
+        geom=$(slurp -b 1a1b2688 -c 7aa2f7ff -s 7aa2f722 -w 2) || exit 0   # Esc cancels
+        grim -g "$geom" "$file"
+        ;;
+    window)
+        geom=$(hyprctl -j activewindow | python3 -c 'import json,sys; w=json.load(sys.stdin); print(f"{w[\"at\"][0]},{w[\"at\"][1]} {w[\"size\"][0]}x{w[\"size\"][1]}")')
+        grim -g "$geom" "$file"
+        ;;
+    *)
+        echo "usage: screenshot [full|area|window]" >&2
+        exit 1
+        ;;
+esac
+
+wl-copy --type image/png < "$file"
+
+action=$(notify-send --app-name=Screenshot --icon="$file" \
+    --action=open=Open --action=folder="Show in folder" \
+    "Screenshot saved" "$(basename "$file") · copied to clipboard" || true)
+case "$action" in
+    open)   xdg-open "$file" ;;
+    folder) thunar "$dir" ;;
+esac

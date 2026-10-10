@@ -1,0 +1,41 @@
+/* Tokyo Night */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    background-color: rgba(26, 27, 38, 0.78);
+    border: 2px solid rgba(122, 162, 247, 0.55);
+    border-radius: 16px;
+}
+
+#outer-box { margin: 14px; }
+
+#input {
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(41, 46, 66, 0.85);
+    color: #c0caf5;
+    box-shadow: none;
+    outline: none;
+}
+#input:focus { border: 1px solid #bb9af7; }
+
+#scroll { margin: 0; }
+#inner-box { background: transparent; }
+
+#entry {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: transparent;
+}
+#entry:selected {
+    background-color: rgba(122, 162, 247, 0.18);
+    outline: none;
+}
+
+#text { color: #a9b1d6; margin-left: 10px; }
+#entry:selected #text { color: #7aa2f7; font-weight: bold; }

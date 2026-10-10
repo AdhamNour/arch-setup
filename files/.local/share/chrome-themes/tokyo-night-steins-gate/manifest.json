@@ -1,0 +1,126 @@
+{
+  "manifest_version": 3,
+  "name": "Tokyo Night · Steins;Gate",
+  "version": "1.0",
+  "description": "Tokyo Night colours with the divergence meter on the new tab page.",
+  "theme": {
+    "images": {
+      "theme_ntp_background": "images/ntp_background.png"
+    },
+    "colors": {
+      "frame": [
+        22,
+        22,
+        30
+      ],
+      "frame_inactive": [
+        22,
+        22,
+        30
+      ],
+      "frame_incognito": [
+        31,
+        29,
+        46
+      ],
+      "frame_incognito_inactive": [
+        31,
+        29,
+        46
+      ],
+      "background_tab": [
+        22,
+        22,
+        30
+      ],
+      "background_tab_inactive": [
+        22,
+        22,
+        30
+      ],
+      "toolbar": [
+        26,
+        27,
+        38
+      ],
+      "tab_text": [
+        192,
+        202,
+        245
+      ],
+      "tab_background_text": [
+        115,
+        122,
+        162
+      ],
+      "tab_background_text_inactive": [
+        86,
+        95,
+        137
+      ],
+      "bookmark_text": [
+        169,
+        177,
+        214
+      ],
+      "toolbar_text": [
+        192,
+        202,
+        245
+      ],
+      "toolbar_button_icon": [
+        122,
+        162,
+        247
+      ],
+      "omnibox_background": [
+        22,
+        22,
+        30
+      ],
+      "omnibox_text": [
+        192,
+        202,
+        245
+      ],
+      "ntp_background": [
+        26,
+        27,
+        38
+      ],
+      "ntp_text": [
+        192,
+        202,
+        245
+      ],
+      "ntp_link": [
+        122,
+        162,
+        247
+      ],
+      "ntp_header": [
+        41,
+        46,
+        66
+      ],
+      "button_background": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.61,
+        0.85,
+        0.74
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 1
+    }
+  }
+}

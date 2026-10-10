@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Steins;Gate
+Description=Nixie divergence meter that converges on 1.048596 while booting
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/steins-gate
+ScriptFile=/usr/share/plymouth/themes/steins-gate/steins-gate.script

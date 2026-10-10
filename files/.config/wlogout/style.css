@@ -1,0 +1,41 @@
+/* wlogout — Tokyo Night */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    background-image: none;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+window {
+    background-color: rgba(22, 22, 30, 0.55);
+}
+
+button {
+    color: #a9b1d6;
+    font-size: 15px;
+    background-color: rgba(26, 27, 38, 0.8);
+    border: 2px solid rgba(41, 46, 66, 0.9);
+    border-radius: 22px;
+    margin: 12px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 22%;
+}
+
+button:focus, button:hover {
+    background-color: rgba(41, 46, 66, 0.9);
+    background-size: 26%;
+    outline-style: none;
+}
+
+#lock      { background-image: url("/home/adham/.config/wlogout/icons/lock.svg"); }
+#logout    { background-image: url("/home/adham/.config/wlogout/icons/logout.svg"); }
+#suspend   { background-image: url("/home/adham/.config/wlogout/icons/suspend.svg"); }
+#reboot    { background-image: url("/home/adham/.config/wlogout/icons/reboot.svg"); }
+#shutdown  { background-image: url("/home/adham/.config/wlogout/icons/shutdown.svg"); }
+
+#lock:hover, #lock:focus         { border-color: #7aa2f7; color: #7aa2f7; }
+#logout:hover, #logout:focus     { border-color: #bb9af7; color: #bb9af7; }
+#suspend:hover, #suspend:focus   { border-color: #7dcfff; color: #7dcfff; }
+#reboot:hover, #reboot:focus     { border-color: #ff9e64; color: #ff9e64; }
+#shutdown:hover, #shutdown:focus { border-color: #f7768e; color: #f7768e; }

@@ -1,0 +1,12 @@
+/* Tokyo Night overrides on top of Tokyonight-Dark */
+
+/* Thunar sidebar: theme leaves the selected row near-white with light text */
+.thunar scrolledwindow.sidebar treeview.view:selected,
+.thunar scrolledwindow.sidebar treeview.view:selected:focus {
+    background-color: alpha(#7aa2f7, 0.18);
+    color: #7aa2f7;
+    border-radius: 8px;
+}
+.thunar scrolledwindow.sidebar treeview.view:hover {
+    background-color: alpha(#c0caf5, 0.06);
+}

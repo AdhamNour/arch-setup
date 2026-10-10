@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# minimized [hide|restore]
+#   hide    - send the focused window to the hidden "minimized" workspace
+#   restore - pick a minimized window (wofi) and bring it back to the current workspace
+set -euo pipefail
+
+case "${1:-restore}" in
+    hide)
+        hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:minimized", follow = false })' >/dev/null
+        ;;
+    restore)
+        list=$(hyprctl clients -j | python3 -c '
+import json, sys
+for c in json.load(sys.stdin):
+    if c["workspace"]["name"] == "special:minimized":
+        print(c["address"] + "\t" + c["class"] + "  —  " + c["title"])')
+        if [ -z "$list" ]; then
+            notify-send --app-name=Windows "Nothing is minimized"
+            exit 0
+        fi
+        pick=$(printf '%s\n' "$list" | cut -f2- | wofi --dmenu --prompt restore --cache-file /dev/null) || exit 0
+        addr=$(printf '%s\n' "$list" | awk -F'\t' -v p="$pick" '$2 == p { print $1; exit }')
+        [ -n "$addr" ] || exit 0
+        ws=$(hyprctl activeworkspace -j | python3 -c 'import json, sys; print(json.load(sys.stdin)["id"])')
+        hyprctl dispatch "hl.dsp.window.move({ workspace = $ws, window = 'address:$addr' })" >/dev/null
+        hyprctl dispatch "hl.dsp.focus({ window = 'address:$addr' })" >/dev/null
+        ;;
+    *)
+        echo "usage: minimized [hide|restore]" >&2
+        exit 1
+        ;;
+esac

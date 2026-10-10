@@ -1,0 +1,69 @@
+# Starship — Tokyo Night powerline prompt
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+command_timeout = 800
+
+format = """
+[╭─](fg:#3b4261)\
+[](fg:#7aa2f7)\
+[  $username ](fg:#1a1b26 bg:#7aa2f7 bold)\
+[](fg:#7aa2f7 bg:#3b4261)\
+$directory\
+[](fg:#3b4261 bg:#292e42)\
+$git_branch\
+$git_status\
+$python$nodejs$rust$golang\
+$cmd_duration\
+[](fg:#292e42)\
+$line_break\
+[╰─](fg:#3b4261)$character"""
+
+[username]
+show_always = true
+style_user = "fg:#1a1b26 bg:#7aa2f7 bold"
+style_root = "fg:#f7768e bg:#7aa2f7 bold"
+format = "[$user]($style)"
+
+[directory]
+style = "fg:#c0caf5 bg:#3b4261"
+read_only = " 󰌾"
+read_only_style = "fg:#f7768e bg:#3b4261"
+format = "[  $path$read_only ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+
+[git_branch]
+symbol = ""
+style = "fg:#bb9af7 bg:#292e42"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "fg:#e0af68 bg:#292e42"
+format = "[($all_status$ahead_behind )]($style)"
+
+[python]
+style = "fg:#e0af68 bg:#292e42"
+format = "[ $symbol($version) ]($style)"
+
+[nodejs]
+style = "fg:#9ece6a bg:#292e42"
+format = "[ $symbol($version) ]($style)"
+
+[rust]
+style = "fg:#ff9e64 bg:#292e42"
+format = "[ $symbol($version) ]($style)"
+
+[golang]
+style = "fg:#7dcfff bg:#292e42"
+format = "[ $symbol($version) ]($style)"
+
+[cmd_duration]
+min_time = 500
+style = "fg:#7dcfff bg:#292e42"
+format = "[ 󰔟 $duration ]($style)"
+
+[character]
+success_symbol = "[❯](bold fg:#9ece6a)"
+error_symbol = "[❯](bold fg:#f7768e)"
+vimcmd_symbol = "[❮](bold fg:#bb9af7)"
