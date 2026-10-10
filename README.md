@@ -6,6 +6,30 @@ A step-by-step recipe to rebuild this desktop from a fresh Arch install. It cove
 
 Every config file and script referenced here is snapshotted under [`files/`](files/), mirroring its path in `$HOME`. For example, `files/.config/hypr/hyprland.lua` goes to `~/.config/hypr/hyprland.lua`.
 
+## Quick start: `install.sh`
+
+The chapters explain each step. [`install.sh`](install.sh) automates them:
+
+```bash
+cd ~/arch-setup
+./install.sh --dry-run all     # preview every command, change nothing
+./install.sh all               # packages, dotfiles, wallpaper, theming, services, SDDM
+./install.sh boot              # GRUB + Plymouth (separately; snapshot taken first, asks to confirm)
+./install.sh dotfiles theming  # or any individual stages
+```
+
+| Stage | Does |
+|---|---|
+| `packages` | pacman packages, builds `yay`, AUR packages, then checks every package installed |
+| `dotfiles` | Copies `files/` into `$HOME` (backs up differing files as `*.bak-<timestamp>`), rewrites `/home/adham` paths for other users, sets script permissions, links libadwaita |
+| `wallpaper` | Renders the divergence meter, reused for SDDM and the Chrome new tab page |
+| `theming` | gsettings, Papirus indigo folders, font cache, bat theme, reloads Hyprland if it's running |
+| `services` | Bluetooth, blueman tray icon off |
+| `sddm` | Installs the login theme and enables SDDM |
+| `boot` | Backup + btrfs snapshot, GRUB and Plymouth assets, **edits** your `/etc/default/grub` and the `HOOKS` line of `mkinitcpio.conf` (it doesn't copy over them), rebuilds, verifies |
+
+Run it as your normal user; it uses sudo where needed. Still manual afterwards: monitor names in `hyprland.lua` (07), and loading the Chrome theme (04).
+
 ## The machine this was built on
 
 | | |
