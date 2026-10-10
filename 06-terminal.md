@@ -1,5 +1,18 @@
 # 06 · Terminal
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `kitty` | GPU-accelerated terminal (SUPER+Q) with Tokyo Night colours and transparency |
+| `starship` | The powerline-style shell prompt |
+| `fastfetch` | System info with the nixie-tube ASCII logo when a terminal opens |
+| `eza` | Modern `ls` with icons, git status and tree view |
+| `bat` | `cat` with syntax highlighting; also colours man pages |
+| `btop` | System monitor (SUPER+SHIFT+Escape) |
+| `tmux` | Terminal multiplexer: splits and sessions in one window |
+| `curl` | Downloads the official Tokyo Night theme for bat |
+
 ## 1. kitty
 
 Copy [`files/.config/kitty/kitty.conf`](files/.config/kitty/kitty.conf):

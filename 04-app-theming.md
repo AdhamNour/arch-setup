@@ -1,5 +1,20 @@
 # 04 · App theming: GTK, Qt, icons, cursor, fonts, Chrome
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `tokyonight-gtk-theme-git` (AUR) | Tokyo Night theme for GTK 3/4 apps (Thunar, pavucontrol, file dialogs, blueman) |
+| `papirus-icon-theme` | Papirus-Dark icon set for apps, folders and wofi |
+| `papirus-folders` (AUR) | Recolours Papirus folder icons (set to indigo) |
+| `bibata-cursor-theme-bin` (AUR) | Bibata-Modern-Ice mouse cursor |
+| `qt6ct` | Lets Qt 6 apps use a chosen style, icons and fonts outside KDE |
+| `kvantum` | Qt style engine. Runs the custom TokyoNight theme (recoloured KvArcDark) |
+| `nwg-look` | Optional GUI for GTK settings (all set here with gsettings instead) |
+| `fontconfig` (dependency) | Font matching. The user rule makes Arabic fall back to Noto Naskh |
+| `noto-fonts` | Provides Noto Naskh Arabic, Noto Sans, Noto Serif |
+| `google-chrome` (AUR) | The browser themed by the unpacked Tokyo Night theme |
+
 ## 1. GTK 3/4 + libadwaita
 
 ```bash

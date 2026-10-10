@@ -1,5 +1,21 @@
 # 10 · Extras & troubleshooting
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `android-studio` (AUR) | Android IDE. Its SDK emulator is what needed the XWayland scaling fix |
+| `texlive-basic`, `texlive-latex`, `texlive-latexrecommended` | Core TeX engine, `pdflatex` and standard LaTeX packages |
+| `texlive-latexextra` | The large collection of extra LaTeX packages most documents use |
+| `texlive-fontsrecommended` | Standard fonts for LaTeX |
+| `texlive-xetex`, `texlive-luatex` | `xelatex` / `lualatex`: Unicode engines that use system fonts (needed for Arabic) |
+| `texlive-langarabic` | Arabic support: polyglossia/arabxetex, hyphenation |
+| `texlive-binextra` | Extra tools, including `latexmk` (auto-rebuild) |
+| `texlive-mathscience`, `texlive-pictures` | Maths/science packages and TikZ/diagrams |
+| `texlive-bibtexextra`, `biber` | Bibliographies (biblatex backend) |
+| `ttf-amiri` (optional) | Arabic font that includes the em dash, which Noto Naskh lacks |
+| `sbctl` (planned) | Manages your own Secure Boot keys and signs GRUB and the kernel |
+
 ## Android emulator: sharp on a scaled screen
 
 **Problem:** the emulator only ships an X11 backend (`~/Android/Sdk/emulator/lib64/qt/plugins/platforms/` has `xcb` but no `wayland`). Running through XWayland at 1.5× made icons and text soft and pixelated.

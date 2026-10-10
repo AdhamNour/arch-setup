@@ -1,5 +1,14 @@
 # 07 · Keyboard, monitors, window management
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `hyprland` | Keyboard layouts (`kb_layout`, `kb_options`), monitor rules, Alt+Tab and the minimize binds all live in its config |
+| `xkeyboard-config` (dependency) | Defines the `us` and `ara` layouts and the `grp:win_space_toggle` switch |
+| `python` | Runs the waybar keyboard-layout module (`kb-layout.py`) and parses `hyprctl -j` output in the minimize script |
+| `wofi` | Picker for restoring minimized windows |
+
 ## 1. English + Arabic layouts
 
 In `hyprland.lua` → `input`:

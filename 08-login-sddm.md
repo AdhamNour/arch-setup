@@ -7,6 +7,14 @@ A custom Qt 6 QML greeter called `steins-gate`:
 - a session picker (bottom-left) and power buttons (bottom-right)
 - a footer reading "WORLDLINE DIVERGENCE · 1.048596"
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `sddm` | The graphical login manager. Its Qt 6 greeter runs the steins-gate QML theme |
+| `xorg-server` | X11 server the SDDM greeter runs on (`DisplayServer=x11`). The Hyprland session itself is Wayland |
+| `qt6-declarative`, `qt6-svg` (dependencies) | QML runtime and `QtQuick.Effects` (blur and glow) used by the theme |
+
 ## 1. Prerequisites
 
 - `sddm` installed. **`xorg-server` must be installed too**, because the SDDM greeter runs on X11 by default.

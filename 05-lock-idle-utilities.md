@@ -1,5 +1,19 @@
 # 05 · Lock, idle, screenshots, clipboard, Bluetooth
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `hyprlock` | The lock screen (SUPER+L, before suspend, after idle) |
+| `hypridle` | Watches for inactivity: dims, locks, turns the screen off, suspends on battery |
+| `grim` | Takes screenshots on Wayland |
+| `slurp` | Lets you drag-select an area for the screenshot |
+| `wl-clipboard` | `wl-copy`/`wl-paste`: Wayland clipboard on the command line (screenshots to clipboard, cliphist) |
+| `cliphist` | Stores clipboard history (SUPER+V) |
+| `bluez` | The Bluetooth stack/daemon (`bluetooth.service`) |
+| `bluez-utils` | `bluetoothctl`, used by the swaync toggle and the pill's right-click |
+| `blueman` | Bluetooth GUI (`blueman-manager`) and pairing agent (`blueman-applet`) |
+
 ## 1. hyprlock: lock screen
 
 hyprlock and hypridle still use **hyprlang** `.conf` syntax, not Lua. Reference copies ship at `/usr/share/hypr/hyprlock.conf` and `/usr/share/hypr/hypridle.conf`.

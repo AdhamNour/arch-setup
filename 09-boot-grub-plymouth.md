@@ -2,6 +2,16 @@
 
 Everything is staged in `~/.local/share/boot-theme/` and installed by three scripts. **Take the snapshot first.**
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `grub` | The bootloader. Shows the themed menu. `grub-mkfont` converts the font; `grub-mkconfig` / `grub-script-check` build and check `grub.cfg` |
+| `plymouth` | The animated boot splash. Its `script` plugin runs `steins-gate.script` |
+| `mkinitcpio` | Builds the initramfs. The `plymouth` hook puts the splash inside it (`lsinitcpio` lists the contents) |
+| `btrfs-progs` | `btrfs subvolume snapshot` for the safety snapshot before touching boot files |
+| `librsvg`, `python` | Render the GRUB background, the highlight images and the Plymouth tube images |
+
 ## 0. Safety net
 
 ```bash

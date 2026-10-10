@@ -1,5 +1,16 @@
 # 03 · Bar, launcher, notifications, power menu
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `waybar` | The top bar with the pills (workspaces, clock, CPU, volume, battery…) |
+| `wofi` | App launcher (SUPER+R). Also the list picker for clipboard history (SUPER+V) and for restoring minimized windows |
+| `swaync` | Notification daemon + slide-out control centre (replaces dunst). `swaync-client` drives the waybar bell |
+| `libnotify` (dependency) | Provides `notify-send`, used by the screenshot and minimize scripts |
+| `wlogout` (AUR) | Full-screen power menu: lock / logout / suspend / reboot / shutdown |
+| `networkmanager` | Wifi/ethernet networking, read by the waybar network pill. Provides `nmtui`, which the pill opens (already part of the base install) |
+
 ## 1. Waybar: floating pills
 
 Copy [`files/.config/waybar/`](files/.config/waybar/) (`config.jsonc`, `style.css`, `scripts/kb-layout.py`).

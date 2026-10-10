@@ -1,5 +1,28 @@
 # 01 · Base system & Hyprland
 
+## Packages in this chapter
+
+| Package | Role |
+|---|---|
+| `hyprland` | The Wayland compositor: windows, workspaces, animations, blur, keybinds. Configured in Lua in 0.56 |
+| `xdg-desktop-portal-hyprland` | Lets apps share the screen, take screenshots and use global shortcuts under Hyprland (e.g. screen sharing in Chrome) |
+| `xdg-desktop-portal-gtk` | Provides the file-open/save dialogs and settings portal for apps that ask through portals |
+| `polkit-kde-agent` | Shows the graphical password prompt when an app needs admin rights (e.g. `pkexec`) |
+| `pipewire` | The audio/video server |
+| `pipewire-pulse` | Makes PipeWire look like PulseAudio, so apps like Chrome and pavucontrol work |
+| `pipewire-alsa` | Routes old ALSA-only apps through PipeWire |
+| `wireplumber` | PipeWire's session manager: picks default speakers/mic, handles plugging in headphones. Provides `wpctl` (volume keys) |
+| `brightnessctl` | Changes screen brightness (brightness keys, waybar pill, hypridle dimming) |
+| `playerctl` | Controls media players (play/pause/next keys) |
+| `network-manager-applet` | `nm-applet` tray icon and `nm-connection-editor` for NetworkManager connections (the wifi pill opens `nmtui`, which comes with `networkmanager` itself) |
+| `pavucontrol` | Volume mixer window (opened from the volume pill) |
+| `thunar` | Graphical file manager (SUPER+E) |
+| `ttf-jetbrains-mono-nerd` | Main UI/terminal font, with Nerd Font icons for waybar, Starship and fastfetch |
+| `noto-fonts`, `noto-fonts-emoji` | Fallback fonts for all scripts (incl. Arabic Naskh/Kufi) and colour emoji |
+| `openssh` | SSH client/server (enabled on this machine) |
+| `base-devel`, `git` | Compiler tools and git, needed to build AUR packages |
+| `yay` (AUR) | AUR helper: installs AUR packages like `pacman` does |
+
 ## 1. Packages
 
 Base session (what the rice started from):
